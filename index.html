@@ -1,11 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/7f6fb1b34b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="resources/css/index.css" />
+  <title>Resume - MA Shanpeng</title>
 </head>
-<body>
-    Hello World!
+
+<body class="" id="body" onload="changeLanguage('english')">
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-card-4" id="navigationbar">
+      <!-- left title -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-wide" onclick="scrollToPoint('body');">
+        <span class="chinese">马 善鹏</span>
+        <span class="english">MA Shanpeng</span>
+        <span class="japanese">馬 善鵬</span>
+      </a>
+      <!-- right navibar link -->
+      <div class="w3-right w3-hide-small w3-hide-medium">
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('experience');">
+          <div class="chinese">经历</div>
+          <div class="english">EXPERIENCE</div>
+          <div class="japanese">経験</div>
+        </a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('education');">
+          <div class="chinese">教育</div>
+          <div class="english">EDUCATION</div>
+          <div class="japanese">教育</div>
+        </a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('skills')">
+          <div class="chinese">技能</div>
+          <div class="english">SKILLS</div>
+          <div class="japanese">スキル</div>
+        </a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('it-projects')">
+          <div class="chinese">项目</div>
+          <div class="english">IT PROJECTS</div>
+          <div class="japanese">プロジェクト</div>
+        </a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('publications')">
+          <div class="chinese">出版物</div>
+          <div class="english">PUBLICATIONS</div>
+          <div class="japanese">出版物</div>
+        </a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="scrollToPoint('downloads')">
+          <div class="chinese">下载</div>
+          <div class="english">DOWNLOADS</div>
+          <div class="japanese">ダウンロード</div>
+        </a>
+      </div>
+
+      <div class="dropdown" style="float: right;">
+        <button class="dropbtn w3-black w3-button" onclick="toggleDropdown()">
+          <div class="chinese">设置</div>
+          <div class="english">SETTINGS</div>
+          <div class="japanese">設定</div>
+        </button>
+        <div class="dropdown-content" id="languageDropdown" style="display: none;">
+          <div class="chinese">语言</div>
+          <div class="english">Language</div>
+          <div class="japanese">言語</div>
+          <div class="dropdown-content">
+            <a href="javascript:void(0)" onclick="changeLanguage('chinese')">中文</a>
+            <a href="javascript:void(0)" onclick="changeLanguage('english')">ENG</a>
+            <a href="javascript:void(0)" onclick="changeLanguage('japanese')">日本語</a>
+          </div>
+        </div>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-hide-large w3-sidebar w3-card w3-bar-block w3-animate-right text-dark-blue" id="sidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">
+      <div class="chinese">关闭 ×</div>
+      <div class="english">Close x</div>
+      <div class="japanese">閉じる ×</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large"
+      onclick="w3_close(); scrollToPoint('experience');">
+      <div class="chinese">经历</div>
+      <div class="english">EXPERIENCE</div>
+      <div class="japanese">経験</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large"
+      onclick="w3_close(); scrollToPoint('education');">
+      <div class="chinese">教育</div>
+      <div class="english">EDUCATION</div>
+      <div class="japanese">教育</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large" onclick="w3_close(); scrollToPoint('skills');">
+      <div class="chinese">技能</div>
+      <div class="english">SKILLS</div>
+      <div class="japanese">スキル</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large"
+      onclick="w3_close(); scrollToPoint('it-projects');">
+      <div class="chinese">项目</div>
+      <div class="english">IT PROJECTS</div>
+      <div class="japanese">プロジェクト</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large"
+      onclick="w3_close(); scrollToPoint('publications');">
+      <div class="chinese">出版物</div>
+      <div class="english">PUBLICATIONS</div>
+      <div class="japanese">出版物</div>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large"
+      onclick="w3_close(); scrollToPoint('downloads');">
+      <div class="chinese">下载</div>
+      <div class="english">DOWNLOADS</div>
+      <div class="japanese">ダウンロード</div>
+    </a>
+
+    <!-- Back-To-Top-Button -->
+    <button class="w3-button w3-black w3-card-4 w3-border" onclick="scrollToTopSmooth();" id="up-button" title="upp"><i class="fa fa-arrow-up"></i></button>
+
+    <script src="resources/js/index.js"></script>
+    <script src="resources/js/backtotop.js"></script>
 </body>
+
 </html>
